@@ -1,0 +1,26 @@
+[gd_scene load_steps=9 format=3 uid="uid://55tcquwyi7te"]
+
+[ext_resource type="Shader" path="res://Assets/outdoor_environment/bushes/bush_wind.gdshader" id="1_atcb7"]
+[ext_resource type="Texture2D" uid="uid://dap2afqj737q5" path="res://Assets/outdoor_environment/materials/simple_leaves/simple_leaves_albedo.png" id="2_8ofrk"]
+[ext_resource type="Texture2D" uid="uid://cu1fm3jggdcgv" path="res://Assets/outdoor_environment/materials/simple_leaves/simple_leaves_normal.png" id="3_mdbhb"]
+[ext_resource type="Texture2D" uid="uid://ovrmwwayytuc" path="res://Assets/outdoor_environment/materials/simple_leaves/simple_leaves_orm.png" id="4_0eq4q"]
+[ext_resource type="ArrayMesh" uid="uid://dbvyvmrfv7b41" path="res://Assets/outdoor_environment/bushes/bush.obj" id="5_kwxrb"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rfln0"]
+fractal_octaves = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p2vx3"]
+seamless = true
+noise = SubResource("FastNoiseLite_rfln0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ghrf"]
+render_priority = 0
+shader = ExtResource("1_atcb7")
+shader_parameter/wind_noise_sampler = SubResource("NoiseTexture2D_p2vx3")
+shader_parameter/albedo_sampler = ExtResource("2_8ofrk")
+shader_parameter/orm_sampler = ExtResource("4_0eq4q")
+shader_parameter/normal_sampler = ExtResource("3_mdbhb")
+
+[node name="Bush1" type="MeshInstance3D"]
+material_override = SubResource("ShaderMaterial_5ghrf")
+mesh = ExtResource("5_kwxrb")
