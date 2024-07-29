@@ -1,2 +1,2 @@
-My first 3D RPG developed on the Godot engine.
+My first 3D Game developed on the Godot engine.
  
