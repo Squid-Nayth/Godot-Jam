@@ -13,6 +13,9 @@ data = PackedVector3Array(-0.9008, 0, -0.0253, -0.5819, 0.1652, 0.7067, -0.6121,
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LevelPlatformer/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_if7bq")
 
+[node name="grass" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_p01yv")
+
 [node name="Plane_025" parent="." index="2"]
 surface_material_override/0 = ExtResource("2_p01yv")
 
@@ -60,18 +63,23 @@ surface_material_override/0 = ExtResource("2_p01yv")
 
 [node name="Plane_023" parent="." index="17"]
 surface_material_override/0 = ExtResource("2_p01yv")
+surface_material_override/1 = ExtResource("2_p01yv")
 
 [node name="Plane_022" parent="." index="18"]
 surface_material_override/0 = ExtResource("2_p01yv")
+surface_material_override/1 = ExtResource("2_p01yv")
 
 [node name="Plane_026" parent="." index="19"]
 surface_material_override/0 = ExtResource("2_p01yv")
+surface_material_override/1 = ExtResource("2_p01yv")
 
 [node name="Plane_027" parent="." index="20"]
 surface_material_override/0 = ExtResource("2_p01yv")
+surface_material_override/1 = ExtResource("2_p01yv")
 
 [node name="Plane_028" parent="." index="21"]
 surface_material_override/0 = ExtResource("2_p01yv")
+surface_material_override/1 = ExtResource("2_p01yv")
 
 [node name="Plane_029" parent="." index="22"]
 surface_material_override/0 = ExtResource("2_p01yv")
