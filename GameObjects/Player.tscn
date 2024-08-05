@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt2ettfpeaksl"]
+
+[ext_resource type="Script" path="res://GameObjects/Player.gd" id="1_3g8ij"]
+[ext_resource type="PackedScene" uid="uid://bopdwuxfl68jq" path="res://GameObjects/PlayerBase.tscn" id="1_c57dk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0vlnp"]
+radius = 0.179339
+height = 0.5919
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8r7c5"]
+size = Vector3(0.28878, 0.0596924, 0.30842)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_3g8ij")
+
+[node name="CamePivot" type="Node3D" parent="."]
+transform = Transform3D(0.995952, -0.0898852, 0, 0.0898364, 0.995412, 0.0329284, -0.00295978, -0.0327951, 0.999458, 0, 0.273, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CamePivot"]
+transform = Transform3D(-0.993357, 0.0826761, 0.0800531, 0.0880281, 0.993942, 0.0658052, -0.0741275, 0.0724149, -0.994615, 0.234618, 0.635672, -2.00349)
+
+[node name="Camera3D" type="Camera3D" parent="CamePivot/SpringArm3D"]
+transform = Transform3D(0.5, 3.72493e-08, 3.37604e-09, -3.65981e-09, 0.5, -1.86265e-09, 0, 0, 0.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0094186, 0.248437, 0.00974035)
+shape = SubResource("CapsuleShape3D_0vlnp")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00997543, -0.00204492, -0.00205326)
+shape = SubResource("BoxShape3D_8r7c5")
+
+[node name="PlayerBase" parent="." instance=ExtResource("1_c57dk")]
