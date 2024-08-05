@@ -1,8 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://bpvv152qc1m43"]
+[gd_scene load_steps=21 format=3 uid="uid://bpvv152qc1m43"]
 
 [ext_resource type="PackedScene" uid="uid://kjakwc8x4xch" path="res://Scenes/world_1.tscn" id="1_vb3lt"]
 [ext_resource type="Material" uid="uid://ovciasxou830" path="res://Assets/outdoor_environment/grass/grass_mat.tres" id="2_7yyi8"]
-[ext_resource type="PackedScene" uid="uid://c16aelv8g37ck" path="res://Assets/shared/sophie_character_controller/sophie_character_controller.tscn" id="3_omp5i"]
 [ext_resource type="Material" uid="uid://d2lqhxyc4dtw0" path="res://Assets/outdoor_environment/water.tres" id="4_0o7jn"]
 [ext_resource type="PackedScene" uid="uid://bml43isuesy1m" path="res://Assets/outdoor_environment/trees/tree.tscn" id="5_qfm4a"]
 [ext_resource type="PackedScene" uid="uid://8o56ett8oups" path="res://Assets/outdoor_environment/orange_flowers/orange_flower.tscn" id="6_nr6ro"]
@@ -197,9 +196,6 @@ surface_material_override/1 = ExtResource("2_7yyi8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.731115, 0.36849, 0.0372229)
 material_override = ExtResource("4_0o7jn")
 mesh = SubResource("PlaneMesh_x8bmf")
-
-[node name="SophieCharacterController" parent="." instance=ExtResource("3_omp5i")]
-transform = Transform3D(-0.761934, 0, 0.647654, 0, 1, 0, -0.647654, 0, -0.761934, 33.4075, 1.2199, -2.76501)
 
 [node name="Vegetation" type="Node3D" parent="."]
 
