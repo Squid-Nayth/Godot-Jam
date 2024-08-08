@@ -27,5 +27,14 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-
+func _input(event):
+	if event is InputEventMouseMotion:
+		var rot_deg = rotation_degrees
+		rot_deg.y -= event.relative.x * mouse_sensitivity
+		rotation_degrees = rot_deg
+		
+		rot_deg = camera_pivot.rotation_degrees
+		rot_deg.x -= event.relative.y * -mouse_sensitivity
+		rot_deg.x = clamp(rot_deg.x, min_pitch, max_pitch)
+		camera_pivot.rotation_degrees = rot_deg
 
