@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dt2ettfpeaksl"]
 
 [ext_resource type="Script" path="res://GameObjects/Player.gd" id="1_3g8ij"]
-[ext_resource type="PackedScene" uid="uid://bopdwuxfl68jq" path="res://GameObjects/PlayerBase.tscn" id="1_c57dk"]
+[ext_resource type="PackedScene" uid="uid://dofwp1v7bwisn" path="res://GameObjects/PlayerBase.tscn" id="1_c57dk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0vlnp"]
 radius = 0.179339
@@ -10,8 +10,10 @@ height = 0.5919
 [sub_resource type="BoxShape3D" id="BoxShape3D_8r7c5"]
 size = Vector3(0.28878, 0.0596924, 0.30842)
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera_pivot", "camera")]
 script = ExtResource("1_3g8ij")
+camera_pivot = NodePath("CamePivot")
+camera = NodePath("CamePivot/SpringArm3D/Camera3D")
 
 [node name="CamePivot" type="Node3D" parent="."]
 transform = Transform3D(0.995952, -0.0898852, 0, 0.0898364, 0.995412, 0.0329284, -0.00295978, -0.0327951, 0.999458, 0, 0.273, 0)
